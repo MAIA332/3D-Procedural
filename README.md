@@ -49,3 +49,50 @@ c = cube(dimension=(4,4,3)) # Gera uma saida aleatorira passando uma dimensão e
        [0.22128505, 0.87316348, 0.1486591 , 0.82709615]])
 }
 ```
+
+### Baseado em dados:
+```
+BIOMES = {
+    "Desert":{
+        "layer1":["Areia"],
+        "layer2":["Cacto","Flor","Duna","Pedra"],
+        "layer3":["Sky"]
+    },
+    "Forest":{
+        "layer1":["Grama"],
+        "layer2":["Árvore","Flor","Cogumelo","cipó","Cachoeira","Rio"],
+        "layer3":["Sky"]
+    },
+    "Ice":{
+        "layer1":["Neve"],
+        "layer2":["Iglu","Cubo de gelo","Estalagmite","Gelo"],
+        "layer3":["Sky"]
+    },
+    "Hills":{
+        "layer1":["Stone"],
+        "layer2":["Árvores","Pedra","Neve","Minerais"],
+        "layer3":["Sky"]
+    }
+}
+
+import random
+
+aux = []
+for i in BIOMES:
+    aux.append(i)
+
+a = random.choice(aux)
+
+c = cube(dimension=(4,4,3), form="structure",data=BIOMES[a])
+
+
+print(c.cube_)
+print(f"\n {c.cube_["layer2"][0][1+1]}")
+```
+### Output:
+
+```
+{'layer1': [['Grama', 'Grama', 'Grama', 'Grama'], ['Grama', 'Grama', 'Grama', 'Grama'], ['Grama', 'Grama', 'Grama', 'Grama'], ['Grama', 'Grama', 'Grama', 'Grama']], 'layer2': [['Cachoeira', 'Cogumelo', 'Cachoeira', 'Flor'], ['Árvore', 'Cachoeira', 'Árvore', 'Flor'], ['Árvore', 'Flor', 'Flor', 'Árvore'], ['Árvore', 'cipó', 'cipó', 'Cachoeira']], 'layer3': [['Sky', 'Sky', 'Sky', 'Sky'], ['Sky', 'Sky', 'Sky', 'Sky'], ['Sky', 'Sky', 'Sky', 'Sky'], ['Sky', 'Sky', 'Sky', 'Sky']]}
+
+Cachoeira
+```
