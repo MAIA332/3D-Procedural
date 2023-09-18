@@ -11,7 +11,7 @@ Este repositório contém um algoritmo que é capaz de gerar abstrações tridim
 ### Requisitos
 
 - Python 3.x
-- Bibliotecas Python necessárias (verifique o arquivo `requirements.txt`)
+- Numpy
 
 ### Repositório:
 
